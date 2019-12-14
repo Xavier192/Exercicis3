@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>    
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+<!--Es fa una conexio local, es a dir jo sóc el host i el client-->
+<persistence-unit name="ejercici3" transaction-type="RESOURCE_LOCAL">
+<provider>org.hibernate.ejb.HibernatePersistence</provider>
+<!--Classes de java que tenim en el nostre paquet.-->
+<class>exercicis3.Client</class>
+<class>exercicis3.Zona</class>
+<class>exercicis3.Sector</class>
+<class>exercicis3.Comercial</class>
+<class>exercicis3.Tarticles</class>
+<!--Conexió mysql i propietats de hibernate-->
+<properties>
+<!--jdbc driver per a conectar a mysql-->
+<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
+<!--Nom d'usuari per a conectar almeu gestor de base de dades-->
+<property name="hibernate.connection.user" value="Xavier" />
+<!--Contrasenya per a conectar al meu gestor de bases de dades-->
+<property name="hibernate.connection.password" value="Daroo"/>
+<!--Indica a quina base de dades s'ha de conectar a n'aquest cas a la base de dades ecercicis3.-->
+<property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/exercicis3?createDatabaseIfNotExist=true" />
+<property name="hibernate.show_sql" value="true"/>
+<property name="hibernate.hbm2ddl.auto" value="update"/>
+</properties>
+</persistence-unit>
+</persistence>
